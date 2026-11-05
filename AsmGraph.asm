@@ -41,6 +41,7 @@ main:
 include src\WinMain.asm			; corpo principale del programma
 include src\MainWndProc.asm		; funzione callback gestione messaggi finestra principale
 include src\RegisterWindowMainClass.asm	; funzione registrazione classe della finestra
+include src\FrameBuffer.asm		; funzioni operanti sul frame buffer
 
 ; qui indichiamo la fine del file con il punto d'ingresso del programma
 end	main

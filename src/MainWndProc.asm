@@ -12,9 +12,15 @@ LOCAL	ps:PAINTSTRUCT
 LOCAL	rect:RECT
 
 	.IF uMsg == WM_DESTROY				; messaggio di chiusura della finestra
-		invoke PostQuitMessage, NULL
+		invoke	DestroyFrameBuffer, ADDR g_fb	; distrugge il frame buffer prima di uscire
+		invoke 	PostQuitMessage, NULL		; chiude la finetra
 
 	.ELSEIF uMsg == WM_CREATE			; messaggio di creazione della finestra
+		invoke	CreateFrameBuffer, ADDR g_fb, FB_WIDTH, FB_HEIGHT		; crea il frame buffer alla creazione della finestra
+		.IF	eax == 0			; errore nella creazione del frame buffer, messaggio di errore
+			invoke	MessageBox, hWnd, ADDR szErrorCreateFrameBuffer, ADDR szCaptionError, MB_OK or MB_ICONERROR
+			mov	eax, -1			; Segnala errore da WM_CREATE: la finestra non viene creata
+		.ENDIF
 
 	.ELSEIF uMsg == WM_PAINT			; messaggio di ridisegno della finestra
 		invoke	BeginPaint, hWnd, ADDR ps

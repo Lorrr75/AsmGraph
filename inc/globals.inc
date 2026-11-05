@@ -9,5 +9,9 @@ g_hMainWnd		HWND ?			; handle della finestra principale
 hInstance    		HINSTANCE ?		; istanza del programma principale
 CommandLine  		LPSTR ?			; puntatore alla linea di comando del programma
 
+; frame buffer
+g_fb			FRAMEBUFFER<>		; il frame buffer principale
+
+
 .data
 

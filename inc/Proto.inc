@@ -6,6 +6,10 @@ WinMain 			proto :DWORD, :DWORD, :DWORD, :DWORD
 ; file RegisterWindowMainClass.asm
 RegisterWindowMainClass 	proto
 
-; File MainWndProc.asm
+; file MainWndProc.asm
 MainWndProc 			proto :DWORD, :DWORD, :DWORD, :DWORD
+
+; file FrameBuffer.asm
+CreateFrameBuffer		proto :DWORD, :DWORD, :DWORD
+DestroyFrameBuffer		proto :DWORD
 

@@ -3,6 +3,9 @@
 
 ; valori costanti utili al programma funzionanti come macro
 
+FB_WIDTH	equ 640
+FB_HEIGHT	equ 480
+
 .data
 
 ; dati costanti memorizzati in memoria per il funzionamento del programma
@@ -21,4 +24,4 @@ szCaptionError		db "ERRORE",0
 ;
 szErrorRegisterWindowMainClass	db "Impossibile registrare la classe della finestra.", 0ah, 0dh, "Programma terminato",0
 szErrorCreateWindow		db "Impossibile creare la finesta.", 0ah, 0dh, "Programma terminato",0
-
+szErrorCreateFrameBuffer    	db "Impossibile creare il frame buffer.", 0ah, 0dh, "Programma terminato",0
