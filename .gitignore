@@ -1,0 +1,18 @@
+# File generati dalla compilazione
+*.obj
+*.exe
+*.res
+*.pdb
+*.ilk
+*.lib
+*.exp
+*.map
+*.lst
+
+# File temporanei di editor e sistema
+*.bak
+*.tmp
+*~
+Thumbs.db
+Desktop.ini
+.vs/

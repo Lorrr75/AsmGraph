@@ -1,1 +1,0 @@
-; Strutc vanno definite qui per una migliore leggibilità del codice e per evitare di includere troppi file esterni
