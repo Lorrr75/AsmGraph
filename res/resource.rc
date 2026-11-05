@@ -1,0 +1,7 @@
+// file di risorse da compilare con RC.EXE
+// comprende:
+//  - dialog e finestre figlie
+//  - menu
+//  - icone (quando ci saranno)
+
+#include "resource.h"
