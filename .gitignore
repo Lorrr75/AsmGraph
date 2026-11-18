@@ -1,0 +1,21 @@
+# File generati dalla compilazione
+*.obj
+*.exe
+*.res
+*.pdb
+*.ilk
+*.lib
+*.exp
+*.map
+*.lst
+
+# ...tranne gli eseguibili di prova pubblicati nella cartella bin
+!bin/*.exe
+
+# File temporanei di editor e sistema
+*.bak
+*.tmp
+*~
+Thumbs.db
+Desktop.ini
+.vs/
