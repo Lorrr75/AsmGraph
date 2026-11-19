@@ -14,8 +14,8 @@ Il frame buffer è indipendente dalle API di Windows: la GDI serve soltanto a mo
 
 Fase iniziale, ma già funzionante: finestra Win32, frame buffer a 32 bit, pixel e linee.
 
-![Test dei pixel](docs/img/test_pixel.png)
-![Test delle linee](docs/img/test_lines.png)
+![Test dei pixel](docs/img/test_1_pixel.png)
+![Test delle linee](docs/img/test_2_lines.png)
 
 ## Provalo subito
 
