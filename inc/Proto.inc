@@ -19,9 +19,12 @@ ReadPixel           		proto :DWORD, :DWORD, :DWORD
 ; file Lines.asm
 DrawLineDDA			proto :DWORD, :DWORD, :DWORD, :DWORD, :DWORD, :DWORD
 
-
+; file Text.asm
+DrawCharStroke			proto :DWORD, :DWORD, :DWORD, :DWORD, :DWORD, :DWORD
+DrawStringStroke		proto :DWORD, :DWORD, :DWORD, :DWORD, :DWORD, :DWORD
 
 
 ; file TestDraw.asm
 TestDraw            		proto :DWORD
 TestLines			proto :DWORD
+TestStroke			proto :DWORD

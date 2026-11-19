@@ -16,6 +16,7 @@ Fase iniziale, ma già funzionante: finestra Win32, frame buffer a 32 bit, pixel
 
 ![Test dei pixel](docs/img/test_1_pixel.png)
 ![Test delle linee](docs/img/test_2_lines.png)
+![Test delle linee](docs/img/test_3_stroke.png)
 
 ## Provalo subito
 

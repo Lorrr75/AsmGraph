@@ -17,6 +17,7 @@ include inc\constants.inc 		; Qui ci saranno le costanti (i tipi EQU ecc)
 include inc\structs.inc			; Qui ci saranno tutte le strutture
 					; per la gestione delle finestre
 include inc\globals.inc			; Qui ci saranno tutte le variabili globali del programma
+include inc\StrokeFont.inc		; Qui ci saranno i font da disegnare
 
 .code
 
@@ -43,7 +44,7 @@ include src\MainWndProc.asm		; funzione callback gestione messaggi finestra prin
 include src\RegisterWindowMainClass.asm	; funzione registrazione classe della finestra
 include src\FrameBuffer.asm		; funzioni operanti sul frame buffer
 include src\Lines.asm			; funzioni disegno linee
-
+include src\Text.asm			; funzione di disegno caratteri sul frame buffer
 
 
 include src\TestDraw.asm		; funzioni di test di disegno

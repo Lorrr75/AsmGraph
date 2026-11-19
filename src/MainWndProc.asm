@@ -29,8 +29,9 @@ LOCAL	ps:PAINTSTRUCT
 		; se vuoi generare tu i test decommenta quello che preferisci e commenta l'ultimo in modo da avere un solo test alla volta
 		; NOTA: il mio consiglio è vederli in ordine come sono stati creati
 
-;		invoke TestDraw, ADDR g_fb		; richiama i test di disegno		[Test   1] test_1_pixel.exe
-		invoke TestLines, ADDR g_fb		; richiama i test disegno linee		[Test   2] test_2_lines.exe
+;		invoke 	TestDraw, ADDR g_fb		; richiama i test di disegno		[Test   1] test_1_pixel.exe
+;		invoke 	TestLines, ADDR g_fb		; richiama i test disegno linee		[Test   2] test_2_lines.exe
+		invoke 	TestStroke, ADDR g_fb		; richiama il test di disegno caratteri [Test	3] test_3_stroke.exe
 
 	.ELSEIF uMsg == WM_PAINT			; messaggio di ridisegno della finestra
 		invoke	BeginPaint, hWnd, ADDR ps

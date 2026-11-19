@@ -6,6 +6,7 @@ Eseguibili già compilati per vedere i risultati senza installare nulla. Ogni pr
 |---|---|---|---|
 | 1 | `test_1_pixel.exe` | Due gradienti 256x256 identici: il primo disegnato con `PutPixel`, il secondo copiato leggendo il primo con `ReadPixel` | `TestDraw` |
 | 2 | `test_2_lines.exe` | Una raggiera di linee dal centro in tutte le direzioni, un punto singolo e due linee che escono dal buffer (`DrawLineDDA`) | `TestLines` |
+| 2 | `test_3_stroke.exe` | Una serie di stringhe di varie dimensioni disegnate con dei tratti usando `DrawLineDDA` per ogni tratto | `TestStroke ` |
 
 ## Come riprodurli
 

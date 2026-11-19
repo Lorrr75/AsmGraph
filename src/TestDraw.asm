@@ -98,3 +98,33 @@ TestLines proc pFB:DWORD
 	invoke	DrawLineDDA, pFB, 540, 400, 800, 520, 00FF00FFh	
 	ret
 TestLines endp
+
+;
+; Prova dei caratteri a tratti: stringhe a scale diverse, la conversione delle minuscole
+; e una stringa che esce dal buffer (la parte fuori viene scartata da PutPixel).
+;
+.data
+
+; usiamo dati "locali" (inteso dentro al file di test) per non sporcare il progetto
+szStroke1   db "ABCDEFGHIJKLMNOPQRSTUVWXYZ",0
+szStroke2   db "0123456789 .,:-+=!?/()",0
+szStroke3   db "ASMGRAPH 2026",0
+szStroke4   db "Test 123",0                     ; minuscole: vengono convertite
+szStroke5   db "STROKE",0
+szStroke6   db "DDA",0
+szStroke7   db "CLIPPING TEST: OUTSIDE",0
+
+.code
+
+TestStroke proc pFB:DWORD
+
+	invoke	DrawStringStroke, pFB, 10, 10, 1, OFFSET szStroke1, 00FFFFFFh	; scala 1
+	invoke	DrawStringStroke, pFB, 10, 26, 2, OFFSET szStroke2, 0000FFFFh	; scala 1
+	invoke	DrawStringStroke, pFB, 10, 50, 3, OFFSET szStroke3, 00FFFF00h	; scala 3
+	invoke	DrawStringStroke, pFB, 10, 90, 4, OFFSET szStroke4, 0000FF00h	; scala 4
+	invoke	DrawStringStroke, pFB, 10, 130, 5, OFFSET szStroke5, 00FF0000h	; scala 5
+	invoke	DrawStringStroke, pFB, 10, 190, 6, OFFSET szStroke6, 00FF00FFh	; scala 6
+	invoke	DrawStringStroke, pFB, 300, 300, 10, OFFSET szStroke7, 00FF8000h	; scala 10
+
+	ret
+TestStroke endp
