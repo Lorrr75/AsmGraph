@@ -26,6 +26,7 @@ Nella cartella [`bin`](bin) trovi due programmi di prova già compilati:
 |---|---|
 | `bin/test_1_pixel.exe` | Due gradienti 256x256 identici: il primo disegnato con `PutPixel`, il secondo copiato leggendo il primo con `ReadPixel`. Se sono uguali, scrittura e lettura sono corrette. |
 | `bin/test_2_lines.exe` | Una raggiera di linee dal centro in tutte le direzioni (orizzontali, verticali, diagonali, inclinazioni intermedie), un punto singolo e due linee che escono dal buffer. |
+| `bin/test_3_stroke.exe` |  Una serie di stringhe di varie dimensioni disegnate con dei tratti usando `DrawLineDDA` per ogni tratto | `TestStroke ` |
 
 > Gli eseguibili non sono firmati digitalmente: Windows SmartScreen o l'antivirus potrebbero mostrare un avviso, come accade per molti programmi di piccoli sviluppatori. Se preferisci non eseguirli, compila tu stesso i sorgenti: in [`bin/README.md`](bin/README.md) trovi come riprodurre ciascun programma di prova.
 
@@ -42,7 +43,7 @@ Nella cartella [`bin`](bin) trovi due programmi di prova già compilati:
 | `DrawStringStroke` | `src/Text.asm` | Disegna una stringa usando DrawCharStroke per ogni carattere nella stringa |
 
 - I colori sono DWORD nel formato `AARRGGBB`: il canale alfa (`AA`) non è usato e si lascia a 0, quindi `00FF0000h` è rosso.
-- Al momento sono stati inseriti solamente i caratteri maiuscoli nella generazione dei font per i caratteri a tratto per cui per creare o modificare i caratteri, vedi [docs/StrokeFont.md](docs/StrokeFont.md).
+- Al momento sono stati inseriti solamente i caratteri maiuscoli nella generazione dei font per i caratteri a tratto, quindi per creare o modificare i caratteri vedi [docs/StrokeFont.md](docs/StrokeFont.md).
 
 ## Requisiti
 
