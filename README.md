@@ -38,8 +38,11 @@ Nella cartella [`bin`](bin) trovi due programmi di prova già compilati:
 | `PutPixel` | `src/FrameBuffer.asm` | Accende un pixel, con controllo dei limiti |
 | `ReadPixel` | `src/FrameBuffer.asm` | Legge il colore di un pixel |
 | `DrawLineDDA` | `src/Lines.asm` | Disegna un segmento con l'algoritmo DDA, in virgola fissa 16.16 |
+| `DrawCharStroke` | `src/Text.asm` | Disegna un carattere a segmenti |
+| `DrawStringStroke` | `src/Text.asm` | Disegna una stringa usando DrawCharStroke per ogni carattere nella stringa |
 
-I colori sono DWORD nel formato `AARRGGBB`: il canale alfa (`AA`) non è usato e si lascia a 0, quindi `00FF0000h` è rosso.
+- I colori sono DWORD nel formato `AARRGGBB`: il canale alfa (`AA`) non è usato e si lascia a 0, quindi `00FF0000h` è rosso.
+- Al momento sono stati inseriti solamente i caratteri maiuscoli nella generazione dei font per i caratteri a tratto per cui per creare o modificare i caratteri, vedi [docs/StrokeFont.md](docs/StrokeFont.md).
 
 ## Requisiti
 
@@ -63,20 +66,24 @@ AsmGraph/
 ├── AsmGraph.asm        punto d'ingresso, include tutti gli altri sorgenti
 ├── make.bat            compila il programma principale
 ├── bin/                eseguibili di prova già compilati e istruzioni per riprodurli
-├── docs/img/           immagini per la documentazione
+├── docs/               Documentazione del software 
+│   └── img/            immagini per la documentazione
 ├── inc/                header comuni
 │   ├── CommonHeader.inc    include delle API Windows
 │   ├── CommonLib.inc       librerie da collegare
 │   ├── Proto.inc           prototipi delle funzioni
 │   ├── constants.inc       costanti e stringhe
 │   ├── structs.inc         strutture dati
-│   └── globals.inc         variabili globali
+│   ├── globals.inc         variabili globali
+│   └── StrokeFont.inc      tabella font caratteri
+
 ├── src/                sorgenti
 │   ├── WinMain.asm                 inizializzazione e ciclo dei messaggi
 │   ├── MainWndProc.asm             gestione dei messaggi della finestra
 │   ├── RegisterWindowMainClass.asm registrazione della classe finestra
 │   ├── FrameBuffer.asm             frame buffer, ClearBuffer, PutPixel, ReadPixel
 │   ├── Lines.asm                   generazione di linee (DDA)
+│   ├── Text.asm                    generazione di caratteri a tratti (tramite DDA)
 │   └── TestDraw.asm                disegni di prova
 └── res/                risorse (icone, menu, dialog)
 ```
@@ -93,6 +100,8 @@ Sviluppo **incrementale**: ogni funzione viene scritta e provata da sola prima d
 - [x] Frame buffer a dimensione fissa, `ClearBuffer`
 - [x] `PutPixel` e `ReadPixel`
 - [x] Generazione di linee con l'algoritmo DDA
+- [x] Generazione di caratteri a tratti tramite l'algoritmo DDA
+- [ ] Generazione di caratteri a matrice di punti
 - [ ] Adattare la finestra alle dimensioni del buffer e gestire il ridimensionamento
 - [ ] Proseguire con i capitoli successivi del libro
 - [ ] Algoritmo di Bresenham (a conclusione del libro), con confronto con il DDA
